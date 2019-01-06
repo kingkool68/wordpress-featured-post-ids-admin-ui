@@ -1,0 +1,73 @@
+.ui-sortable-handle {
+	cursor: grab;
+}
+
+.ui-sortable-helper {
+	cursor: grabbing;
+}
+
+#featured-post-ids-results {
+	position: relative;
+
+	li {
+		background-color: #fff;
+		padding: 8px 8px 8px 10px;
+		border-radius: 2px;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+		position: relative;
+	}
+
+	/*
+		For performant transitioning of box-shadow
+		See http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+	*/
+
+	li::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	li.ui-sortable-helper::after {
+		opacity: 1;
+	}
+}
+
+.featured-post-ids-spinner {
+	width: 16px;
+	position: relative;
+	top: 2px;
+	left: 4px;
+}
+
+.featured-post-ids-delete {
+	float: right;
+	color: #efefef;
+	cursor: pointer;
+	background: none;
+	border: 0 none;
+
+	transition: color 200ms ease-in-out;
+
+	li:hover &,
+	&:focus {
+		color: red;
+	}
+
+	li.ui-sortable-helper & {
+		color: #efefef;
+	}
+
+	.dashicons {
+		font-size: 16px;
+	}
+}

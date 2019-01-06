@@ -1,0 +1,7 @@
+<li>
+	<button class="featured-post-ids-delete js-featured-post-ids-delete" title="Unfeature this post">
+		{{ delete_icon }}
+	</button>
+	{{ title }}
+	<input type="hidden" name="featured-post-ids-ids[]" value="{{ id|absint }}">
+</li>

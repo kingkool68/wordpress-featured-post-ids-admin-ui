@@ -1,0 +1,17 @@
+<tr class="form-field">
+	<th scope="row" valign="top">
+		<label for="term_meta[custom_term_meta]">Featured Posts</label>
+	</th>
+	<td class="featured-post-ids-sortable-container">
+		<input name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" class="js-featured-post-ids-autocomplete" value="" style="width: 90%;">
+		<img src="{{ admin_url|esc_url }}images/wpspin_light-2x.gif" style="display: none;" class="featured-post-ids-spinner js-featured-post-ids-spinner">
+		<input type="hidden" name="taxonomy" id="featured-post-ids-taxonomy" value="{{ taxonomy|esc_attr }}">
+		<input type="hidden" name="term_id" id="featured-post-ids-term-id" value="{{ term_id|absint }}">
+		<p class="description">Search for posts tagged with "{{ term_name }}" to feature</p>
+		{{ nonce_field }}
+
+		<ol id="featured-post-ids-results" class="js-featured-post-ids-results">
+			{{ results }}
+		</ol>
+	</td>
+</tr>
